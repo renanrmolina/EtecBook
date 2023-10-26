@@ -1,0 +1,36 @@
+<main class="w-100 m-auto text-center">
+    <form>
+        <img src="/assets/img/logo.png" alt="Logo" class="mb-1" width="150">
+        <h2 class="mb-2 fw-normal">EtecBook</h2>
+        <h5 class="mg-3 fw-normal">Sua vida escolar, mais conectada!!!</h5>
+
+        <div class="form-floating mb-2">
+            <input type="text" class="form-control" id="email" placeholder="Email ou nome de usuário">
+            <label for="email">Email ou Nome de Usuário</label>
+        </div>
+
+        <div class="form-floating mb-2">
+            <input type="password" class="form-control" id="password" placeholder="Senha de Acesso">
+            <label for="password">Senha de Acesso</label>
+        </div>
+
+        <div class="checkbox my-2 text-start">
+            <label>
+                <input type="checkbox" value="remember-me">Manter Conectado?
+            </label>
+        </div>
+
+        <button type="submit" class="w-100 btn btn-primary mb-2">Entrar</button>
+
+        <a routerLink="/forget" class="text-decoration-none mt-3">Esqueceu a Senha?</a>
+
+        <div class="separator">
+            <div class="line"></div>
+            <h6>Novo por aqui?</h6>
+            <div class="line"></div>
+        </div>
+
+        <a routerLink="/register" class="w-100 btn btn-success mt-2">Criar conta</a>
+
+    </form>
+</main>
