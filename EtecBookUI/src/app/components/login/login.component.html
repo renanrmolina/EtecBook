@@ -1,17 +1,23 @@
 <main class="w-100 m-auto text-center">
-    <form>
+    <form [formGroup]="loginForm">
         <img src="/assets/img/logo.png" alt="Logo" class="mb-1" width="150">
         <h2 class="mb-2 fw-normal">EtecBook</h2>
         <h5 class="mg-3 fw-normal">Sua vida escolar, mais conectada!!!</h5>
 
         <div class="form-floating mb-2">
-            <input type="text" class="form-control" id="email" placeholder="Email ou nome de usuário">
+            <input formControlName="email" type="text" class="form-control" id="email" placeholder="Email ou nome de usuário"
+            [class.is-invalid]="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">
             <label for="email">Email ou Nome de Usuário</label>
+            <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')" 
+            class="text-danger text-start d-block mt-1">Campo Obrigatório</small>
         </div>
 
         <div class="form-floating mb-2">
-            <input type="password" class="form-control" id="password" placeholder="Senha de Acesso">
+            <input formControlName="password" type="password" class="form-control" id="password" placeholder="Senha de Acesso"
+            [class.is-invalid]="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">
             <label for="password">Senha de Acesso</label>
+            <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')"
+            class="text-danger text-start d-block mt-1">Campo Obrigatório</small>
         </div>
 
         <div class="checkbox my-2 text-start">
@@ -20,7 +26,7 @@
             </label>
         </div>
 
-        <button type="submit" class="w-100 btn btn-primary mb-2">Entrar</button>
+        <button (click)="onSubmit()" type="submit" class="w-100 btn btn-primary mb-2">Entrar</button>
 
         <a routerLink="/forget" class="text-decoration-none mt-3">Esqueceu a Senha?</a>
 
